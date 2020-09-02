@@ -1,31 +1,27 @@
-package skcc;
 
-public class ReservationCanceled extends AbstractEvent {
+package local;
 
-    private Long resvid;
-    private String screeningId;
+public class ReservationChanged extends AbstractEvent {
+
+    private Long id;
+    private Long screeningId;
     private String hospitalId;
-    private String chkDate;
+    private String hospitalNm;
     private String custNm;
     private String status;
 
-    public ReservationCanceled(){
-        super();
+    public Long getId() {
+        return id;
     }
 
-    public Long getResvid() {
-        return resvid;
+    public void setId(Long id) {
+        this.id = id;
     }
-
-    public void setResvid(Long resvid) {
-        this.resvid = resvid;
-    }
-
-    public String getScreeningId() {
+    public Long getScreeningId() {
         return screeningId;
     }
 
-    public void setScreeningId(String screeningId) {
+    public void setScreeningId(Long screeningId) {
         this.screeningId = screeningId;
     }
     public String getHospitalId() {
@@ -35,12 +31,12 @@ public class ReservationCanceled extends AbstractEvent {
     public void setHospitalId(String hospitalId) {
         this.hospitalId = hospitalId;
     }
-    public String getChkDate() {
-        return chkDate;
+    public String getHospitalNm() {
+        return hospitalNm;
     }
 
-    public void setChkDate(String chkDate) {
-        this.chkDate = chkDate;
+    public void setHospitalNm(String hospitalNm) {
+        this.hospitalNm = hospitalNm;
     }
     public String getCustNm() {
         return custNm;

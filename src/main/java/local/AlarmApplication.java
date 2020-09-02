@@ -1,5 +1,5 @@
-package skcc;
-import skcc.config.kafka.KafkaProcessor;
+package local;
+import local.config.kafka.KafkaProcessor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

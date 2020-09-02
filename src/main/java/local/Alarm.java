@@ -1,4 +1,4 @@
-package skcc;
+package local;
 
 import javax.persistence.*;
 import org.springframework.beans.BeanUtils;

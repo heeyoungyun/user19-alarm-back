@@ -1,4 +1,4 @@
-package skcc;
+package local;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 

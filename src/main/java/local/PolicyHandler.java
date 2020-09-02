@@ -1,6 +1,6 @@
-package skcc;
+package local;
 
-import skcc.config.kafka.KafkaProcessor;
+import local.config.kafka.KafkaProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -17,21 +17,21 @@ public class PolicyHandler{
     }
 
     @StreamListener(KafkaProcessor.INPUT)
-    public void wheneverReservationRegistered_Notify(@Payload ReservationRegistered reservationRegistered){
+    public void wheneverReservationCompleted_Notify(@Payload ReservationCompleted reservationCompleted){
 
-        if(reservationRegistered.isMe()){
-            System.out.println("##### listener Notify : " + reservationRegistered.toJson());
+        if(reservationCompleted.isMe()){
+            System.out.println("##### listener Notify : " + reservationCompleted.toJson());
 
-            addNotificationHistory("(Customer)" + reservationRegistered.getCustNm(), "reservationRegistered");
+            addNotificationHistory("(Customer)" + reservationCompleted.getCustNm(), "reservationCompleted");
         }
     }
     @StreamListener(KafkaProcessor.INPUT)
-    public void wheneverReservationCanceled_Notify(@Payload ReservationCanceled reservationCanceled){
+    public void wheneverReservationChanged_Notify(@Payload ReservationChanged reservationChanged){
 
-        if(reservationCanceled.isMe()){
-            System.out.println("##### listener Notify : " + reservationCanceled.toJson());
+        if(reservationChanged.isMe()){
+            System.out.println("##### listener Notify : " + reservationChanged.toJson());
 
-            addNotificationHistory("(Customer)" + reservationCanceled.getCustNm(), "reservationCanceled");
+            addNotificationHistory("(Customer)" + reservationChanged.getCustNm(), "reservationChanged");
         }
     }
 

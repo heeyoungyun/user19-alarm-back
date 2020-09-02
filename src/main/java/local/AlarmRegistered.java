@@ -1,4 +1,4 @@
-package skcc;
+package local;
 
 public class AlarmRegistered extends AbstractEvent {
 
